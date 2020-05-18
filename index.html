@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="https://roadmap.hexstreamsoft.com/" />
+    <meta name="author" content="Jean-Philippe Paradis" />
+    <link rel="author" href="https://abc.hexstream.xyz/" />
+    <link rel="license" href="https://roadmap.hexstreamsoft.com/UNLICENSE" />
+    <meta name="description" content="This public roadmap outlines my naive intentions regarding what I'm planning to work on in the near future. Please sponsor me to speed up development!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Roadmap | HexstreamSoft</title>
+    <link href="css/global.css" rel="stylesheet" type="text/css" />
+    <link href="https://global.hexstream.dev/css/homepage.css" rel="stylesheet" type="text/css" />
+    <link href="https://global.hexstream.dev/css/cards.css" rel="stylesheet" type="text/css" />
+    <link href="https://global.hexstream.dev/css/tags.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script src="https://global.hexstream.dev/scripts/global.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="search.js"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+
+    <nav id="top-nav">
+
+      <div class="main">
+
+        <div class="breadcrumbs">
+          <a href="https://www.hexstreamsoft.com/">HexstreamSoft</a>
+        </div>
+
+        <nav class="tabs" id="meta-nav">
+          <ul>
+            <li><a class="github" href="https://github.com/Hexstream/roadmap.hexstreamsoft.com" target="_blank"><span>See on GitHub</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-05-17">17 may 2020</time><span>.</span></p>
+
+    </nav>
+
+    <main>
+
+      <header id="page-header">
+        <h1>Roadmap</h1>
+        <p class="description">Keep your eyes on the ball, Hexstream!</p>
+      </header>
+
+      <nav class="tabs">
+        <ul>
+          <li><a href="#initargs-canonicalization">Initargs canonicalization + 6 new libraries</a></li>
+          <li><a href="#definitions-systems-2.0">definitions-systems 2.0</a></li>
+          <li><a href="#lispy-format-1.0">lispy-format 1.0</a></li>
+          <li><a href="#hexstreamsoft-sponsors">HexstreamSoft Sponsors</a></li>
+          <li><a href="#loop-replacement">LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
+        </ul>
+      </nav>
+
+      <ul id="legend">
+        <li id="legend_background"><span class="icon">🛈</span> <span class="description">Background</span></li>
+        <li id="legend_why-im-excited"><span class="icon">🗲</span> <span class="description">Why I'm excited</span></li>
+        <li id="legend_current-status"><span class="icon">✍</span> <span class="description">Current status</span></li>
+      </ul>
+
+      <p id="learn-more"><a href="about/">Learn more</a></p>
+
+      <section id="initargs-canonicalization">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#initargs-canonicalization" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Initargs canonicalization + 6 new libraries</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+
+              <p>Traditionally, there has been no standard way to canonicalize slot values. For instance, you might declare a slot as having type string, but prefer to let the user specify any string designator. In this situation, there are various suboptimal approaches you could take:</p>
+
+              <ul>
+
+                <li>
+                  <p>Give up and let the user specify a string designator and store that value directly, coercing it to a string when reading the slot's value. This is semantically nauseating and inefficient, and could compromise correctness and the debugging experience.</p>
+                </li>
+
+                <li>
+                  <p>Give up and force the user to specify the canonicalized value (a string). This is maximally convenient for the implementor, but fairly inconvenient for the user.</p>
+                </li>
+
+                <li>
+                  <p>Let the user specify a string designator, and correctly canonicalize it to a string internally before storing it in the slot. This is maximally convenient for the user, but fairly inconvenient for the implementor, especially as there is no idiomatic way to do this. <a href="https://twitter.com/HexstreamSoft/status/1085038328611774464" target="_blank" class="tweet">It took me 10+ years to find the best way to do this without infrastructure</a>, and it's still fairly inconvenient for the implementor. This could be made easier with a macro, but it's still semantically suboptimal. It would basically be a <em>design pattern</em>, and as Alan Kay said, <q>Design patterns are for when you run out of language</q>. It can also a great burden to properly document the specific canonicalization strategy you chose, especially as canonicalization is incredibly often desirable.</p>
+                </li>
+
+              </ul>
+
+              <p>The complete lack of built-in support for slot value canonicalization (or even of a standard idiom for it) might be seen as one of the biggest <em>unacknowledged</em> blind spots in the Common Lisp language. (Although most programming languages probably share that limitation.)</p>
+
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+              <p>My upcoming initargs canonicalization library implements the platonically ideal solution using the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>. You can just pass <code>:canonicalize #'string</code> as a slot option and the corresponding initarg will be canonicalized! There is also a <code>:canonicalize</code> class option (similar to <code>:default-initargs</code>) to canonicalize initargs not necessarily associated with slots.</p>
+              <p>This is a very intuitive and broadly useful killer app for the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>!</p>
+              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>, which is what the 6 supporting libraries are about (mostly). I normally work on and release one library at a time, but I thought I'd take advantage of the dependency graph between them to demonstrate use-cases.</p>
+              <p>These libraries provide:</p>
+              <ul>
+                <li>
+                  <p>a truly extensible version of <code>defclass</code> that can accurately control the expansion according to the metaclass and automatically detect the suitable metaclass by analyzing the <code>defclass</code> form;</p>
+                </li>
+                <li>
+                  <p>a simple extensible protocol for computing a guess using advisors (a generic protocol notably used for automatic metaclass detection);</p>
+                </li>
+                <li>
+                  <p>an easy way to ensure that special subclasses of standard-object cluster right in front of standard-object in the class precedence list, and an easy way to automatically inherit from such special subclasses where needed;</p>
+                </li>
+                <li>
+                  <p>an easy way to designate simple class mixins that should bypass <code>c2mop:validate-superclass</code>;</p>
+                </li>
+                <li>
+                  <p>a way of extracting the compile-time side-effects of forms, notably useful when you want to replicate the compile-time side-effects of built-in definition forms;</p>
+                </li>
+                <li>
+                  <p>a canonical way of coercing a class designator to a class.</p>
+                </li>
+              </ul>
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+              <p>I'm almost 100% done with the design and implementation, the big thing left to do is correctly detecting the metaclass when we need to walk the superclasses to do so, and signaling an error if we used heuristics and they turned out to mispredict the metaclass. (Walking the superclasses may be non-trivial in the presence of unfinalized or forward-referenced classes. There are multiple possible strategies to do so, involving various tradeoffs.)</p>
+              <p>After that, I'll "just" need to write all the unit tests and documentation, and then release everything at once.</p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section id="definitions-systems-2.0">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#definitions-systems-2.0" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">definitions-systems 2.0</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+              <p><a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems 1.0</a> is a bit too minimalist.<br />Creating a new definitions-system should be a bit easier.<br />Some obvious extensions are left as an exercise to the user.<br />The user needs to write too much boilerplate.</p>
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+              <p><a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems 1.0</a> is already my most important library, and<br />definitions-systems 2.0 will be my most important library update ever!</p>
+              <p>definitions-systems 2.0 adds support for <code>defsys:ensure</code>, <code>(define defsys:system)</code>, <code>defsys:root-system</code>, <code>defsys:standard-root-system</code>, <code>defsys:definition</code>, <code>defsys:owner</code>, externalizable definitions (through generation of recursive <code>defsys:locate</code> forms by walking owners up to a root system), <code>defsys:unbind-definition</code> (a subprotocol of <code>defsys:unbind</code> that implements the actual removal if said definition does exist and makes it easy to notify the system and/or definition about it), <code>defsys:check-definition</code> (which allows to validate a definition before it's actually added to a system), <code>defsys:simple-expansion-mixin</code> (a very simple yet very powerful default), <code>defsys:map-definitions</code>, <code>defsys:count</code>, automatic tracking of primary and alias bindings for definitions, <code>defsys:base-definition-class-mixin</code> for easy determination of the class to use for definitions.</p>
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+              <p>I'm almost completely done, this is blocked on <a href="#initargs-canonicalization">initargs canonicalization</a>.</p>
+              <p>I also need to write unit tests for the new features.</p>
+              <p>Documentation of the new features is almost completely done.</p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section id="lispy-format-1.0">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#lispy-format-1.0" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">lispy-format 1.0</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+              <p><a href="http://www.lispworks.com/documentation/HyperSpec/Body/f_format.htm" target="_blank">format</a> is a disgrace, a black mark on Common Lisp. Packing a complex control language into a string is deeply insane when we could and should just use s-expressions. <code>format</code> is the single worst-designed feature in Common Lisp, even worse than <a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_loop.htm" target="_blank">loop</a>. <code>format</code> is <a href="https://twitter.com/HexstreamSoft/status/490937766411509761" target="_blank" class="tweet">not extensible, despite the very constrained <code>~/~/</code> escape hatch</a>.</p>
+              <p>It is simply mind-boggling that <code>format</code> is still used and largely embraced by the community in 2020.</p>
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+              <p>lispy-format 1.0 properly translates the essence of <code>format</code> into a proper s-expressions form. A guaranteed smash hit!</p>
+              <p>I know exactly what the final product will look like. There are 2 levels: individual functions which can be used standalone or in concert, and a macro for concisely and efficiently combining multiple output operations in one go.</p>
+              <p>lispy-format 1.0 will be far more readable than <code>format</code>, and it will be completely modular and extensible. And of course, it properly uses the package system, so you can easily write your own extended version of the standard built-in operators if you like, or design your own features which will seamlessly integrate with built-in features and third-party features.</p>
+              <p>One of several advantages of lispy-format 1.0 is that a command's arguments are specified with the command instead of all commands being specified ahead of time and then all arguments, making it hard to correlate commands with their arguments.</p>
+              <p>lispy-format 1.0 will be very easy to learn, regardless of the user's level of proficiency with <code>format</code>. That said, <code>format</code> experts will find many familiar similarities compared to <code>format</code>, making transition easy. Tools should eventually be provided to help migration.</p>
+              <p><a href="https://github.com/Hexstream-not-yet-ready/lispy-format/blob/master/hairiest.lisp#L31" target="_blank">Here is an old preview.</a></p>
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+              <p>I've already achieved significant progress on a private branch.</p>
+              <p>This is blocked on definitions-systems 2.0.</p>
+              <p>(I made the <a href="https://www.hexstreamsoft.com/articles/common-lisp-format-reference/clhs-summary/#subsections-summary-table" target="_blank">Epic FORMAT table</a> years ago as a precursor to this work.)</p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section id="hexstreamsoft-sponsors">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#hexstreamsoft-sponsors" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">HexstreamSoft Sponsors</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+              <p>My fundraising efforts were a total shitshow until 3 april 2020, when <a href="https://blackbrane.com/" target="_blank">Black Brane Systems</a> unexpectedly started sponsoring me at 200$/month (after doubling)!</p>
+              <p>This made me realize that corporate sponsors is where the big money is to be made.</p>
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+
+              <p>I'll have 30+ libraries in Quicklisp at that point!</p>
+
+              <p>HexstreamSoft Sponsors will establish more concrete, predefined incentives for supporting me at the <a href="https://github.com/sponsors/Hexstream" target="_blank">Crusader+</a> levels, primarily consisting of ads for my monthly sponsors (mostly company logos linking to their site) on the <a href="https://www.hexstreamsoft.com/" target="_blank">HexstreamSoft front page</a>, and similarly for lifetime sponsors on another page.</p>
+
+              <p>HexstreamSoft Sponsors will be a pretty breathtaking marketing operation for Common Lisp, after finishing the aforementioned libraries I'll be in a really great position to make great pitches to kickstart Common Lisp Revival 2020!! <a href="https://github.com/sponsors/Hexstream" target="_blank">Support me</a> at this early stage to cement your place in history!! (Remember that GitHub doubles all your contributions!)</p>
+
+              <p>I am confident HexstreamSoft Sponsors will quickly help me attract other major sponsors, and it would be really great if we could take full advantage of my up to 5000$ GitHub Sponsors doubler before it expires in December 2020!</p>
+
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+              <p>I have some concrete ideas about how this will work, but I have not substantially started implementing this yet.</p>
+              <p>I need to complete the above work before I can meaningfully start implementing HexstreamSoft Sponsors, as the significantly increased relevance (and hopefully recognition) of my body of open-source work will make it easier to present relevant and convincing marketing.</p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section id="loop-replacement">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#loop-replacement" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">LOOP/Iterate/mapcar/dolist etc replacement</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+              <p><a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_loop.htm" target="_blank">loop</a> is not great, <a href="https://common-lisp.net/project/iterate/" target="_blank">iterate</a> is a bit better but shares its monolithic nature, and the alternatives like <a href="http://www.lispworks.com/documentation/HyperSpec/Body/f_mapc_.htm" target="_blank">mapcar</a> are not really powerful and flexible enough.</p>
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+              <p>This library will implement a revolutionary new paradigm for iteration and mapping. It is extremely simple, intuitive, modular, flexible, powerful and optimizable, and easily scales from trivial use-cases to very complex, so you can just use it always. It will basically obsolete every iteration and mapping construct you know of, and then some.</p>
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+              <p>This is a spiritual successor to my various Loopless projects that I worked on for years and <a href="https://twitter.com/HexstreamSoft/status/1171593330460909569" target="_blank" class="tweet"> deleted relatively recently</a>, and other related work such as <a href="https://www.hexstreamsoft.com/libraries/multiple-value-variants/#mapcar" target="_blank">multiple-value mapping</a>. I completely stopped using <code>loop</code> eons ago and now make heavy use of <code>mapcar</code> and friends, but this is not enough and after several iterations of failed attempts at LOOP replacement, I finally came up with a truly revolutionary paradigm shift in computer science (or at least, a very big evolutionary leap). This is actually just a different arrangement of already existing concepts such as iterators, but designed and integrated in a much more flexible and powerful way without sacrificing performance (and in fact, improving it).</p>
+              <p>I already know what the project will be called, but I'm keeping it a secret until a first release.</p>
+              <p>I already know exactly what the high-level syntax and semantics will be. I could trivially tell you what it is, but I want to keep all the glory for myself on this one. ;P (It took me quite a bit of really hard work to reach that point, and if I immediately revealed the fruits of my labor then someone could implement a crude version and reap all the glory before I have perfected the entirety of the design at all layers of abstraction.) The high-level syntax and semantics is actually just an embarrassingly simple variation on one of the standard Common Lisp constructs.</p>
+              <p>As for the mid-level and low-level semantics, I have some good ideas about it, but much work yet remains to be done. I recently became an expert in an area of the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a> that I believe will be absolutely crucial to the mid-level and low-level semantics.</p>
+              <p>I have already spent several months designing this on graph paper. I am now ready to try actually implementing this (once I'm done with the above work items).</p>
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer id="footer">
+
+      <p><strong><em>Please <a href="https://github.com/sponsors/Hexstream" target="_blank">sponsor me</a> to speed up development of these exciting features!</em></strong></p>
+
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,122 @@
+#top-nav > .main > .tabs ul > li {
+    border-top: none;
+    border-bottom: none;
+}
+
+main {
+    margin-bottom: 0;
+}
+
+
+#legend {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 0.9em;
+    margin-bottom: 0;
+    opacity: 0.7;
+}
+
+#legend li {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 0 0.6em;
+}
+
+#legend li .icon {
+    margin-right: 0.2rem;
+}
+
+#legend #legend_why-im-excited .icon,
+section .subsections section.why-im-excited .icon {
+    background-image: url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg");
+    background-repeat: no-repeat;
+    background-position: top 0.2em center;
+    color: transparent;
+    transform: scale(1.2);
+}
+
+#legend #legend_current-status .icon {
+    font-size: 1.2em;
+    margin-right: 0.3rem;
+}
+
+#learn-more {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 0.6em;
+}
+
+#learn-more a {
+    opacity: 0.7;
+}
+
+#learn-more a:hover {
+    opacity: initial;
+}
+
+
+main > section:first-of-type {
+    margin-top: 1.5em;
+}
+
+section .subsections {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+section .subsections section {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    flex: 1 1 30em;
+    max-width: max-content;
+    border: thin solid rgba(0, 0, 0, 0.3);
+    padding: 0.5em;
+    margin: 0.5em 1em 0.5em 0;
+}
+
+section .subsections section .body p:first-child {
+    margin-top: 0;
+}
+
+section .subsections section .body p:last-child {
+    margin-bottom: 0;
+}
+
+section .subsections section .icon {
+    font-size: 2em;
+    margin-right: 0.5rem;
+}
+
+section .subsections section.background .icon {
+    margin-top: -0.2em;
+}
+
+section .subsections section.current-status .icon {
+    font-size: 2.8em;
+    margin-top: -0.2em;
+}
+
+
+#footer p {
+    display: table;
+    margin: 1rem auto;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.2em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
+    background-image: url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg"),
+                      url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg");
+    background-repeat: no-repeat;
+    background-position: left 0.1em center, right 0.1em center;
+    background-size: 1.2em;
+}
+
+#footer p a {
+    text-decoration: underline;
+}
