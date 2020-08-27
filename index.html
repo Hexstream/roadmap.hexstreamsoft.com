@@ -40,7 +40,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-08-23">23 august 2020</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-08-26">26 august 2020</time><span>.</span></p>
 
     </nav>
 
@@ -76,7 +76,7 @@
             <a href="#initargs-canonicalization" class="anchor">⚓</a>
           </span>
           <span class="breadcrumbs">
-            <a class="here">Initargs canonicalization + 7 new libraries</a>
+            <a class="here">Initargs canonicalization + 6 new libraries</a>
           </span>
         </h1>
 
@@ -119,7 +119,7 @@
             <div class="body">
               <p>My upcoming initargs canonicalization library implements the platonically ideal solution using the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>. You can just pass <code>:canonicalize #'string</code> as a slot option and the corresponding initarg will be canonicalized! There is also a <code>:canonicalize</code> class option (similar to <code>:default-initargs</code>) to canonicalize initargs not necessarily associated with slots.</p>
               <p>This is a very intuitive and broadly useful killer app for the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>!</p>
-              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>, which is what the 9 supporting libraries are about (mostly). I normally work on and release one library at a time, but I thought I'd take advantage of the dependency graph between them to demonstrate use-cases.</p>
+              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>, which is what the 6 supporting libraries are about (mostly). I normally work on and release one library at a time, but I thought I'd take advantage of the dependency graph between them to demonstrate use-cases.</p>
               <p>These libraries provide:</p>
               <ul>
                 <li>
@@ -139,9 +139,6 @@
                 </li>
                 <li>
                   <p>an easy way to designate simple class mixins that should bypass <code>c2mop:validate-superclass</code>;</p>
-                </li>
-                <li>
-                  <p>a way of extracting the compile-time side-effects of forms, notably useful when you want to replicate the compile-time side-effects of built-in definition forms;</p>
                 </li>
               </ul>
             </div>
