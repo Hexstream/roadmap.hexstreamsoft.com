@@ -40,7 +40,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-09-18">18 september 2020</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-09-22">22 september 2020</time><span>.</span></p>
 
     </nav>
 
@@ -53,7 +53,7 @@
 
       <nav class="tabs">
         <ul>
-          <li><a href="#initargs-canonicalization">Initargs canonicalization + 4 new libraries</a></li>
+          <li><a href="#initargs-canonicalization">Initargs canonicalization + 3 new libraries</a></li>
           <li><a href="#definitions-systems-2.0">definitions-systems 2.0</a></li>
           <li><a href="#lispy-format-1.0">lispy-format 1.0</a></li>
           <li><a href="#hexstreamsoft-sponsors">HexstreamSoft Sponsors</a></li>
@@ -76,7 +76,7 @@
             <a href="#initargs-canonicalization" class="anchor">⚓</a>
           </span>
           <span class="breadcrumbs">
-            <a class="here">Initargs canonicalization + 4 new libraries</a>
+            <a class="here">Initargs canonicalization + 3 new libraries</a>
           </span>
         </h1>
 
@@ -119,14 +119,11 @@
             <div class="body">
               <p>My upcoming initargs canonicalization library implements the platonically ideal solution using the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>. You can just pass <code>:canonicalize #'string</code> as a slot option and the corresponding initarg will be canonicalized! There is also a <code>:canonicalize</code> class option (similar to <code>:default-initargs</code>) to canonicalize initargs not necessarily associated with slots.</p>
               <p>This is a very intuitive and broadly useful killer app for the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>!</p>
-              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>, which is what the 4 supporting libraries are about (mostly).</p>
+              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>, which is what the 3 supporting libraries are about (mostly).</p>
               <p>These libraries provide:</p>
               <ul>
                 <li>
                   <p>a truly extensible version of <code>defclass</code> that can accurately control the expansion according to the metaclass and automatically detect the suitable metaclass by analyzing the <code>defclass</code> form;</p>
-                </li>
-                <li>
-                  <p>an easy way to ensure that special subclasses of standard-object cluster right in front of standard-object in the class precedence list, and an easy way to automatically inherit from such special subclasses where needed;</p>
                 </li>
                 <li>
                   <p>a simple yet powerful value inheritance scheme;</p>
