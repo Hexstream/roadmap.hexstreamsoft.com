@@ -5,6 +5,34 @@
 
 main {
     margin-bottom: 0;
+    position: initial;
+}
+
+#page-header + .tabs + .tabs {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+@media (min-width: 58em) {
+
+    #page-header + #near-far {
+        flex-flow: row;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0.5em;
+    }
+
+    #near-far ul {
+        margin: 0;
+    }
+
+    #near-far ul li {
+        border-top: none;
+        border-bottom: none;
+    }
+
 }
 
 
