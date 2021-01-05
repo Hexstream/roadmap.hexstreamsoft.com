@@ -13,8 +13,6 @@ main {
     margin-bottom: 1.5em;
 }
 
-/* Avoid conflict with Common Lisp Revival 2020 Fundraiser.
-
 @media (min-width: 58em) {
 
     #page-header + #near-far {
@@ -36,8 +34,6 @@ main {
     }
 
 }
-
-*/
 
 
 #legend {
