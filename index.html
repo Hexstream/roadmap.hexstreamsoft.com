@@ -37,7 +37,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2021-01-19">19 january 2021</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2021-01-25">25 january 2021</time><span>.</span></p>
 
     </nav>
 
@@ -57,7 +57,7 @@
 
       <nav class="tabs">
         <ul>
-          <li><a href="#initargs-canonicalization">Initargs canonicalization + 1 new library</a></li>
+          <li><a href="#initargs-canonicalization">Initargs canonicalization</a></li>
           <li><a href="#definitions-systems-2.0">definitions-systems 2.0</a></li>
           <li><a href="#lispy-format-1.0">lispy-format 1.0</a></li>
           <li><a href="#loop-replacement">LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
@@ -79,7 +79,7 @@
             <a href="#initargs-canonicalization" class="anchor">⚓</a>
           </span>
           <span class="breadcrumbs">
-            <a class="here">Initargs canonicalization + 1 new library</a>
+            <a class="here">Initargs canonicalization</a>
           </span>
         </h1>
 
@@ -122,12 +122,6 @@
             <div class="body">
               <p>My upcoming initargs canonicalization library implements the platonically ideal solution using the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>. You can just pass <code>:canonicalize #'string</code> as a slot option and the corresponding initarg will be canonicalized! There is also a <code>:canonicalize</code> class option (similar to <code>:default-initargs</code>) to canonicalize initargs not necessarily associated with slots.</p>
               <p>This is a very intuitive and broadly useful killer app for the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>!</p>
-              <p>Along the way, I solved several extensibility and usability problems regarding the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a>. There is one last supporting library I have yet to finish:</p>
-              <ul>
-                <li>
-                  <p>a truly extensible version of <code>defclass</code> that can accurately control the expansion according to the metaclass and automatically detect the suitable metaclass by analyzing the <code>defclass</code> form.</p>
-                </li>
-              </ul>
             </div>
 
           </section>
@@ -138,7 +132,6 @@
 
             <div class="body">
               <p>I'm almost 100% done with the design and implementation.</p>
-              <p>At some point, I had 10 upcoming libraries and thought I would finish and release them all at once to take advantage of the dependency graph between them to demonstrate use-cases, but this didn't work out at all, mostly because it was way too stressful and depressing, so I am now finishing them and releasing them one at a time, quite successfully.</p>
             </div>
 
           </section>
