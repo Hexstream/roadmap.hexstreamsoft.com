@@ -37,7 +37,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2021-02-14">14 february 2021</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2021-03-01">1 march 2021</time><span>.</span></p>
 
     </nav>
 
@@ -57,7 +57,6 @@
 
       <nav class="tabs">
         <ul>
-          <li><a href="#definitions-systems-2.0">definitions-systems 2.0</a></li>
           <li><a href="#lispy-format-1.0">lispy-format 1.0</a></li>
           <li><a href="#loop-replacement">LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
         </ul>
@@ -70,56 +69,6 @@
       </ul>
 
       <p id="learn-more"><a href="about/">Learn more</a></p>
-
-      <section id="definitions-systems-2.0">
-
-        <h1 class="breadcrumbs-bar">
-          <span class="section-relative-nav">
-            <a href="#definitions-systems-2.0" class="anchor">⚓</a>
-          </span>
-          <span class="breadcrumbs">
-            <a class="here">definitions-systems 2.0</a>
-          </span>
-        </h1>
-
-        <div class="subsections">
-
-          <section class="background">
-
-            <span class="icon">🛈</span>
-
-            <div class="body">
-              <p><a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems 1.0</a> is a bit too minimalist.<br />Creating a new definitions-system should be a bit easier.<br />Some obvious extensions are left as an exercise to the user.<br />The user needs to write too much boilerplate.</p>
-            </div>
-
-          </section>
-
-          <section class="why-im-excited">
-
-            <span class="icon">🗲</span>
-
-            <div class="body">
-              <p><a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems 1.0</a> is already my most important library, and<br />definitions-systems 2.0 will be my most important library update ever!</p>
-              <p>definitions-systems 2.0 adds support for <code>defsys:ensure</code>, <code>(define defsys:system)</code>, <code>defsys:root-system</code>, <code>defsys:standard-root-system</code>, <code>defsys:definition</code>, <code>defsys:owner</code>, externalizable definitions (through generation of recursive <code>defsys:locate</code> forms by walking owners up to a root system), <code>defsys:unbind-definition</code> (a subprotocol of <code>defsys:unbind</code> that implements the actual removal if said definition does exist and makes it easy to notify the system and/or definition about it), <code>defsys:check-definition</code> (which allows to validate a definition before it's actually added to a system), <code>defsys:simple-expansion-mixin</code> (a very simple yet very powerful default), <code>defsys:map-definitions</code>, <code>defsys:count</code>, automatic tracking of primary and alias bindings for definitions, <code>defsys:base-definition-class-mixin</code> for easy determination of the class to use for definitions.</p>
-            </div>
-
-          </section>
-
-          <section class="current-status">
-
-            <span class="icon">✍</span>
-
-            <div class="body">
-              <p>I'm almost completely done.</p>
-              <p>I need to write unit tests for the new features.</p>
-              <p>Documentation of the new features is almost completely done.</p>
-            </div>
-
-          </section>
-
-        </div>
-
-      </section>
 
       <section id="lispy-format-1.0">
 
@@ -166,7 +115,7 @@
 
             <div class="body">
               <p>I've already achieved significant progress on a private branch.</p>
-              <p>This is blocked on definitions-systems 2.0.</p>
+              <p>After a surprisingly long and torturous path,<br />I can finally resume work on this!</p>
               <p>(I made the <a href="https://www.hexstreamsoft.com/articles/common-lisp-format-reference/clhs-summary/#subsections-summary-table" target="_blank">Epic FORMAT table</a> years ago as a precursor to this work.)</p>
             </div>
 
