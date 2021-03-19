@@ -37,7 +37,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2020-12-06">6 december 2020</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2021-03-19">19 march 2021</time><span>.</span></p>
 
     </nav>
 
@@ -57,8 +57,7 @@
 
       <nav class="tabs">
         <ul>
-          <li><a href="#first-class-lambda-lists">first-class-lambda-lists</a></li>
-          <li><a href="#explicit-bind">explicit-bind</a></li>
+          <li><a href="#loop-replacement">LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
           <li><a href="#second-web-framework">Second web framework</a></li>
           <li><a href="#public-domain-spiritual-successor-to-the-clhs">Public domain spiritual successor to the CLHS</a></li>
         </ul>
@@ -72,14 +71,14 @@
 
       <p id="learn-more"><a href="../about/">Learn more</a></p>
 
-      <section id="first-class-lambda-lists">
+      <section id="loop-replacement">
 
         <h1 class="breadcrumbs-bar">
           <span class="section-relative-nav">
-            <a href="#first-class-lambda-lists" class="anchor">⚓</a>
+            <a href="#loop-replacement" class="anchor">⚓</a>
           </span>
           <span class="breadcrumbs">
-            <a class="here">first-class-lambda-lists</a>
+            <a class="here">LOOP/Iterate/mapcar/dolist etc replacement</a>
           </span>
         </h1>
 
@@ -90,11 +89,7 @@
             <span class="icon">🛈</span>
 
             <div class="body">
-
-              <p>Lambda lists being one of the most omnipresent features in Common Lisp, obviously it would be incredibly useful to be able to manipulate them easily.</p>
-
-              <p>Very few projects even try to tackle this problem, and none of them make a good job of it or are enjoyable to use.</p>
-
+              <p><a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_loop.htm" target="_blank">loop</a> is not great, <a href="https://common-lisp.net/project/iterate/" target="_blank">iterate</a> is a bit better but shares its monolithic nature, and the alternatives like <a href="http://www.lispworks.com/documentation/HyperSpec/Body/f_mapc_.htm" target="_blank">mapcar</a> are not really powerful and flexible enough.</p>
             </div>
 
           </section>
@@ -104,13 +99,7 @@
             <span class="icon">🗲</span>
 
             <div class="body">
-
-              <p><a href="https://github.com/Hexstream-not-yet-ready/first-class-lambda-lists" target="_blank">first-class-lambda-lists</a> will provide a simple unified extensible way of processing lambda lists.</p>
-
-              <p>It will make it very easy to add support for new lambda list keywords and lambda list types.</p>
-
-              <p>A system for easily converting higher-level lambda lists to their lower-level equivalents is also planned.</p>
-
+              <p>This library will implement a revolutionary new paradigm for iteration and mapping. It is extremely simple, intuitive, modular, flexible, powerful and optimizable, and easily scales from trivial use-cases to very complex, so you can just use it always. It will basically obsolete every iteration and mapping construct you know of, and then some.</p>
             </div>
 
           </section>
@@ -120,62 +109,11 @@
             <span class="icon">✍</span>
 
             <div class="body">
-
-              <p>The project is about 80% complete, but stalled and not yet usable. Life is hard! ¯\_(ツ)_/¯</p>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </section>
-
-      <section id="explicit-bind">
-
-        <h1 class="breadcrumbs-bar">
-          <span class="section-relative-nav">
-            <a href="#explicit-bind" class="anchor">⚓</a>
-          </span>
-          <span class="breadcrumbs">
-            <a class="here">explicit-bind</a>
-          </span>
-        </h1>
-
-        <div class="subsections">
-
-          <section class="background">
-
-            <span class="icon">🛈</span>
-
-            <div class="body">
-
-              <p>As far as I'm concerned, <a href="https://common-lisp.net/project/metabang-bind/" target="_blank">metabang-bind</a> has a good core concept, but takes the wrong design decisions at nearly every turn.</p>
-
-            </div>
-
-          </section>
-
-          <section class="why-im-excited">
-
-            <span class="icon">🗲</span>
-
-            <div class="body">
-
-              <p><a href="https://github.com/Hexstream-not-yet-ready/explicit-bind" target="_blank">explicit-bind</a> is a great <a href="https://common-lisp.net/project/metabang-bind/" target="_blank">metabang-bind</a> replacement project I have been trying to finish since forever.</p>
-
-            </div>
-
-          </section>
-
-          <section class="current-status">
-
-            <span class="icon">✍</span>
-
-            <div class="body">
-
-              <p>This is unfortunately stalled on, among other things, <a href="#first-class-lambda-lists">first-class-lambda-lists</a>.</p>
-
+              <p>This is a spiritual successor to my various Loopless projects that I worked on for years and <a href="https://twitter.com/HexstreamSoft/status/1171593330460909569" target="_blank" class="tweet"> deleted relatively recently</a>, and other related work such as <a href="https://www.hexstreamsoft.com/libraries/multiple-value-variants/#mapcar" target="_blank">multiple-value mapping</a>. I completely stopped using <code>loop</code> eons ago and now make heavy use of <code>mapcar</code> and friends, but this is not enough and after several iterations of failed attempts at LOOP replacement, I finally came up with a truly revolutionary paradigm shift in computer science (or at least, a very big evolutionary leap). This is actually just a different arrangement of already existing concepts such as iterators, but designed and integrated in a much more flexible and powerful way without sacrificing performance (and in fact, improving it).</p>
+              <p>I already know what the project will be called, but I'm keeping it a secret until a first release.</p>
+              <p>I already know exactly what the high-level syntax and semantics will be. I could trivially tell you what it is, but I want to keep all the glory for myself on this one. ;P (It took me quite a bit of really hard work to reach that point, and if I immediately revealed the fruits of my labor then someone could implement a crude version and reap all the glory before I have perfected the entirety of the design at all layers of abstraction.) The high-level syntax and semantics is actually just an embarrassingly simple variation on one of the standard Common Lisp constructs.</p>
+              <p>As for the mid-level and low-level semantics, I have some good ideas about it, but much work yet remains to be done. I recently became an expert in an area of the <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">MOP</a> that I believe will be absolutely crucial to the mid-level and low-level semantics.</p>
+              <p>I have already spent several months designing this on graph paper. I am now ready to try actually implementing this (once I'm done with the above work items).</p>
             </div>
 
           </section>
