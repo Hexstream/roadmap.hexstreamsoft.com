@@ -135,7 +135,7 @@ section .subsections section.current-status .icon {
     margin: 1rem auto;
     font-size: 2em;
     text-align: center;
-    line-height: 1.2em;
+    line-height: 1.2;
     padding-left: 1.4em;
     padding-right: 1.4em;
     background-image: url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg"),
