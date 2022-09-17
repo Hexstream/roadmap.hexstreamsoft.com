@@ -15,7 +15,7 @@ main {
 
 @media (min-width: 58em) {
 
-    #page-header + #near-far {
+    #page-header + .near-far {
         flex-flow: row;
         position: absolute;
         top: 0;
@@ -24,15 +24,20 @@ main {
         margin-top: 0.5em;
     }
 
-    #near-far ul {
+    .near-far ul {
         margin: 0;
     }
 
-    #near-far ul li {
+    .near-far ul li {
         border-top: none;
         border-bottom: none;
     }
 
+}
+
+section + .near-far {
+    margin-top: -1.1em;
+    margin-bottom: 1.8em;
 }
 
 
