@@ -14,7 +14,9 @@
     <link href="css/global.css" rel="stylesheet" type="text/css" />
     <link href="https://global.hexstream.dev/css/homepage.css" rel="stylesheet" type="text/css" />
     <link href="https://global.hexstream.dev/css/tags.css" rel="stylesheet" type="text/css" />
+    <link href="https://global.hexstream.dev/css/forms.css" rel="stylesheet" type="text/css" />
     <link href="css/roadmap.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/prefs.mjs" type="module"></script>
     <script src="https://global.hexstream.dev/scripts/arrows-madness.mjs" type="module"></script>
   </head>
 
@@ -66,7 +68,14 @@
       </nav>
 
       <nav class="tabs contains-title roadmap-items other-page">
-        <h1><a href="far/">Far</a></h1>
+        <h1>
+          <span class="labelled-control" id="preview-option" data-state-domain="site-prefs">
+            <input id="preview-visibility-option" type="checkbox" class="replaced" disabled="disabled" checked="checked"
+                   data-state-key="preview.visibility" data-state-value="show" data-state-antivalue="hide"/>
+            <label for="preview-visibility-option">&nbsp;</label>
+          </span>
+          <a href="far/">Far</a>
+        </h1>
         <ul>
           <li><a href="far/#loop-replacement">LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
           <li><a href="far/#second-web-framework">Second web framework</a></li>
