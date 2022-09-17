@@ -8,14 +8,27 @@ main {
     position: initial;
 }
 
-#page-header + .tabs + .tabs {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+#page-header {
+    margin-bottom: 0;
 }
 
-@media (min-width: 58em) {
+.tabs.roadmap-items {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.tabs.roadmap-items + .tabs.roadmap-items {
+    margin-top: -0.25em;
+}
+
+#page-header + .near-far {
+    display: none;
+}
+
+@media (min-width: 42.5em) {
 
     #page-header + .near-far {
+        display: flex;
         flex-flow: row;
         position: absolute;
         top: 0;
@@ -33,6 +46,14 @@ main {
         border-bottom: none;
     }
 
+}
+
+.tabs.here h1 a {
+    text-decoration: underline;
+}
+
+.tabs.other-page {
+    opacity: 0.6;
 }
 
 section + .near-far {
