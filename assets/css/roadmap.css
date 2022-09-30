@@ -21,6 +21,10 @@ main {
     margin-top: -0.25em;
 }
 
+.tabs.roadmap-items .highlight {
+    font-weight: bold;
+}
+
 #page-header + .near-far {
     display: none;
 }
