@@ -12,44 +12,8 @@ main {
     margin-bottom: 0;
 }
 
-.tabs.roadmap-items {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.tabs.roadmap-items + .tabs.roadmap-items {
-    margin-top: -0.25em;
-}
-
 .tabs.roadmap-items .highlight {
     font-weight: bold;
-}
-
-#page-header + .near-far {
-    display: none;
-}
-
-@media (min-width: 42.5em) {
-
-    #page-header + .near-far {
-        display: flex;
-        flex-flow: row;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin-top: 0.5em;
-    }
-
-    .near-far ul {
-        margin: 0;
-    }
-
-    .near-far ul li {
-        border-top: none;
-        border-bottom: none;
-    }
-
 }
 
 .tabs.here h1 a {
@@ -77,11 +41,6 @@ html.preview\.visibility\=hide .tabs.other-page ul
 
 #preview-option.labelled-control input.replaced + label {
     padding-right: 0.1em;
-}
-
-section + .near-far {
-    margin-top: -1.1em;
-    margin-bottom: 1.8em;
 }
 
 
