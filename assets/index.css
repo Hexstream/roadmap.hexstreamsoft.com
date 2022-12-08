@@ -12,10 +12,6 @@ main {
     margin-bottom: 0;
 }
 
-.tabs.roadmap-items .highlight {
-    font-weight: bold;
-}
-
 .tabs.here h1 a {
     text-decoration: underline;
 }
@@ -135,6 +131,15 @@ section .subsections section.background .icon {
 section .subsections section.current-status .icon {
     font-size: 2.8em;
     margin-top: -0.2em;
+}
+
+
+a.highlight {
+    font-weight: bold;
+}
+
+.library {
+    white-space: nowrap;
 }
 
 
