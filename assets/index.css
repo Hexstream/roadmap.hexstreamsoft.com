@@ -62,7 +62,7 @@ html.preview\.visibility\=hide .tabs.other-page ul
 
 #legend #legend_why-im-excited .icon,
 section .subsections section.why-im-excited .icon {
-    background-image: url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg");
+    background-image: url("https://global.hexstream.dev/non-free/images/lightning-bolt_shaded.svg");
     background-repeat: no-repeat;
     background-position: top 0.2em center;
     color: transparent;
@@ -151,8 +151,8 @@ a.highlight {
     line-height: 1.2;
     padding-left: 1.4em;
     padding-right: 1.4em;
-    background-image: url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg"),
-                      url("https://non-free.hexstream.dev/global.hexstream.dev/images/lightning-bolt_shaded.svg");
+    background-image: url("https://global.hexstream.dev/non-free/images/lightning-bolt_shaded.svg"),
+                      url("https://global.hexstream.dev/non-free/images/lightning-bolt_shaded.svg");
     background-repeat: no-repeat;
     background-position: left 0.1em center, right 0.1em center;
     background-size: 1.2em;
