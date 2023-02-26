@@ -69,11 +69,6 @@ section .subsections section.why-im-excited .icon {
     transform: scale(1.2);
 }
 
-#legend #legend_current-status .icon {
-    font-size: 1.2em;
-    margin-right: 0.3rem;
-}
-
 #learn-more {
     font-size: 0.9em;
     text-align: center;
@@ -125,12 +120,7 @@ section .subsections section .icon {
 }
 
 section .subsections section.background .icon {
-    margin-top: -0.2em;
-}
-
-section .subsections section.current-status .icon {
-    font-size: 2.8em;
-    margin-top: -0.2em;
+    margin-top: -0.1em;
 }
 
 
