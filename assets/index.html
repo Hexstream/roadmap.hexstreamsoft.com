@@ -41,7 +41,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2022-12-08">8 december 2022</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2023-08-11">11 august 2023</time><span>.</span></p>
 
     </nav>
 
@@ -52,23 +52,21 @@
         <p class="description">Please <a href="https://sponsors.hexstreamsoft.com/about/" target="_blank">sponsor me</a> to speed up development of these exciting features!</p>
       </header>
 
-      <nav class="tabs roadmap-items here">
+      <nav class="tabs">
         <ul>
-          <li><a href="#public-domain-spiritual-successor-to-the-clhs" class="highlight">🔥 Public domain spiritual successor to the CLHS</a></li>
-        </ul>
-        <ul>
+          <li><a href="#unit-testing-framework" class="highlight">🔥 Unit testing framework</a></li>
           <li><a href="#update-ready-to-use-libraries">Update ready-to-use libraries</a></li>
         </ul>
         <ul>
           <li><a href="#first-class-lambda-lists">first-class-lambda-lists</a></li>
-          <li><a href="#unit-testing-framework">Unit testing framework</a></li>
           <li><a href="#declarations-processing">Declarations processing</a></li>
           <li><a href="#explicit-bind">explicit-bind</a></li>
-        </ul>
-        <ul>
           <li><a href="#lispy-format-1.0" class="highlight">🔥 lispy-format 1.0</a></li>
           <li><a href="#loop-replacement" class="highlight">🔥 LOOP/Iterate/mapcar/dolist/etc replacement</a></li>
+        </ul>
+        <ul>
           <li><a href="#second-web-framework">Second web framework</a></li>
+          <li><a href="#public-domain-spiritual-successor-to-the-clhs" class="highlight">🔥 Public domain spiritual successor to the CLHS</a></li>
         </ul>
       </nav>
 
@@ -80,14 +78,14 @@
 
       <p id="learn-more"><a href="about/">Learn more</a></p>
 
-      <section id="public-domain-spiritual-successor-to-the-clhs" class="highlight">
+      <section id="unit-testing-framework" class="highlight">
 
         <h1 class="breadcrumbs-bar">
           <span class="section-relative-nav">
-            <a href="#public-domain-spiritual-successor-to-the-clhs" class="anchor">⚓</a>
+            <a href="#unit-testing-framework" class="anchor">⚓</a>
           </span>
           <span class="breadcrumbs">
-            <a class="here">Public domain spiritual successor to the CLHS 🔥</a>
+            <a class="here">Unit testing framework 🔥</a>
           </span>
         </h1>
 
@@ -99,7 +97,9 @@
 
             <div class="body">
 
-              <p>The <a href="http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" target="_blank">CLHS</a> cannot be updated and exhibits terrible usability on mobile. This is an extremely sad state of affairs for our most important resource.</p>
+              <p>There are a billion Common Lisp unit testing frameworks,<br />none of which I find appealing.</p>
+
+              <p>I had been using <a href="https://github.com/Shinmera/parachute" target="_blank">Parachute</a>, but I don't really like it.</p>
 
             </div>
 
@@ -111,9 +111,11 @@
 
             <div class="body">
 
-              <p>I'm going to make a public domain spiritual successor to the CLHS based on <a href="https://github.com/Hexstream/dpans" target="_blank">dpANS3</a>, unless someone beats me to it.</p>
+              <p>I will make a unit testing framework leveraging <a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems</a> for extreme simplicity and extensibility. With <a href="https://www.hexstreamsoft.com/libraries/" target="_blank">30+ ready-to-use libraries</a>, I already have plenty of incentive to make a great unit testing framework for myself, even if nobody else used it.</p>
 
-              <p>I think my <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">modern public domain CLOS MOP specification</a> proves that I am entirely capable of tackling this project and doing a really great job.</p>
+              <p>I initially thought the focus of the initial version would merely be to be good enough <em>for me</em>, but after reading <a href="https://sabracrolleton.github.io/testing-framework" target="_blank">Sabra Crolleton's great article</a>, I am confident I can make this the best Common Lisp unit testing framework upon first release!</p>
+
+              <p><strong><em>This is an extremely important project, since ALL libraries need a unit testing framework!</em></strong></p>
 
             </div>
 
@@ -125,9 +127,15 @@
 
             <div class="body">
 
-              <p>I initially thought I should clearly do this once <a href="#second-web-framework">my second web framework</a> is up and running, but considering <a href="https://status-quo.hexstream.expert/services/cloudflare/" target="_blank">recent</a> and upcoming improvements to my infrastructure, I am planning to release this in 2023 after all. This has been a <em>batshit insane emergency</em> for years.</p>
+              <p>Having reached a breaking point, <strong>I need this <em>NOW!!!</em></strong></p>
 
-              <p>I already know what this will be called, but I'm keeping the name under wraps until a first release.</p>
+              <p>
+                <small>(I thought I needed to finish <a href="#first-class-lambda-lists">first-class-lambda-lists</a> first,
+                <br />
+                but I don't think that will be necessary after all,
+                <br />
+                or at least not for a first release.)</small>
+              </p>
 
             </div>
 
@@ -188,7 +196,7 @@
 
             <div class="body">
 
-              <p>I will do this in 2024, since I absolutely want to release <a href="#public-domain-spiritual-successor-to-the-clhs">my CLHS replacement</a> in 2023, my most widely advertised deadline ever!</p>
+              <p>I will do most of this after releasing <a href="#unit-testing-framework">my unit testing framework</a>.</p>
 
             </div>
 
@@ -248,67 +256,6 @@
             <div class="body">
 
               <p>The project is in a relatively advanced state of completion, but is not yet usable and is a sprawling mess. I am looking to make major refactorings and simplifications. This will be my most complex library yet.</p>
-
-            </div>
-
-          </section>
-
-        </div>
-
-      </section>
-
-      <section id="unit-testing-framework">
-
-        <h1 class="breadcrumbs-bar">
-          <span class="section-relative-nav">
-            <a href="#unit-testing-framework" class="anchor">⚓</a>
-          </span>
-          <span class="breadcrumbs">
-            <a class="here">Unit testing framework</a>
-          </span>
-        </h1>
-
-        <div class="subsections">
-
-          <section class="background">
-
-            <span class="icon">🛈</span>
-
-            <div class="body">
-
-              <p>There are a billion Common Lisp unit testing frameworks, none of which I find appealing. (Ok, honestly I don't even want to check, as clearly none of them could possibly appeal to my very specific tastes by chance.)</p>
-
-              <p>I have been using <a href="https://github.com/Shinmera/parachute" target="_blank">Parachute</a>,<br />but I'm confident I can make something I like much better.</p>
-
-            </div>
-
-          </section>
-
-          <section class="why-im-excited">
-
-            <span class="icon">🗲</span>
-
-            <div class="body">
-
-              <p>I will make a unit testing framework leveraging <a href="https://www.hexstreamsoft.com/libraries/definitions-systems/" target="_blank">definitions-systems</a> for extreme simplicity and extensibility. With <a href="https://www.hexstreamsoft.com/libraries/" target="_blank">30+ ready-to-use libraries</a>, I already have plenty of incentive to make a great unit testing framework for myself, even if nobody else used it.</p>
-
-              <p>The focus of the initial version will be to be good enough <em>for me</em>, but I hope to <em>eventually</em> make it the best Common Lisp unit testing framework, though it could take years. The first version could theoretically already be the best Common Lisp unit testing framework, but given that I won't even review the capabilities of the other existing unit testing frameworks, this seems highly unlikely.</p>
-
-              <p>Ideally, eventually I would take the time to do such a review and improve my unit testing framework until it's effectively a conceptual superset of all the other unit testing frameworks, at least with respect to their intrinsically desirable features.</p>
-
-              <p>I usually try to make a "best of breed" library with the first release, but I believe this would represent way too much work in this case, and would push back other very important projects like <a href="#lispy-format-1.0">lispy-format 1.0</a> way too much. Maybe I'll just give up and review the other libraries before making my own after all, but no promises...</p>
-
-            </div>
-
-          </section>
-
-          <section class="current-status">
-
-            <span class="icon">✍</span>
-
-            <div class="body">
-
-              <p>I have not started yet. I need to finish <a href="#first-class-lambda-lists">first-class-lambda-lists</a> first.</p>
 
             </div>
 
@@ -587,6 +534,69 @@
               <p>I'm already a pretty advanced expert in Common Lisp, HTML5 and CSS3, and I'm building on the experience of my first fairly advanced web framework, so I have a very solid base to start.</p>
 
               <p>I already single-handedly wrote and am successfully managing 100+ mobile-optimized HTML pages written in raw HTML5 and CSS3, spread across <a href="https://abc.hexstream.xyz/websites/" target="_blank">25+ subdomains in 4 main websites</a>, so clearly I am VERY motivated to finally make a great web framework, and it had better make it super easy to manage several dozens of subdomains because my web presence is only going to expand...</p>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section id="public-domain-spiritual-successor-to-the-clhs" class="highlight">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#public-domain-spiritual-successor-to-the-clhs" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Public domain spiritual successor to the CLHS 🔥</a>
+          </span>
+        </h1>
+
+        <div class="subsections">
+
+          <section class="background">
+
+            <span class="icon">🛈</span>
+
+            <div class="body">
+
+              <p>The <a href="http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" target="_blank">CLHS</a> cannot be updated and exhibits terrible usability on mobile. This is an extremely sad state of affairs for our most important resource.</p>
+
+              <p>There have been various attempts by multiple parties over the years to remedy this, but no suitable replacement has emerged.</p>
+
+              <p>This has been a <em>batshit insane emergency</em> for years.</p>
+
+            </div>
+
+          </section>
+
+          <section class="why-im-excited">
+
+            <span class="icon">🗲</span>
+
+            <div class="body">
+
+              <p>I am going to make a public domain spiritual successor to the CLHS based on <a href="https://github.com/Hexstream/dpans" target="_blank">dpANS3</a>.</p>
+
+              <p>I think my <a href="https://clos-mop.hexstreamsoft.com/" target="_blank">modern public domain CLOS MOP specification</a> proves that I am entirely capable of tackling this project and doing a really great job.</p>
+
+              <p><strong><em>I am the only one I trust to make a high-quality CLHS replacement.</em></strong></p>
+
+            </div>
+
+          </section>
+
+          <section class="current-status">
+
+            <span class="icon">✍</span>
+
+            <div class="body">
+
+              <p><em><strong>MY DEEPEST APOLOGIES!!!</strong> I simply cannot release this in 2023 after all, nor anytime soon in fact. <strong>This is simply an utter infrastructural impossibility given the current state of my Common Lisp infrastructure.</strong> There is no point in even starting the project if I clearly don't have <a href="#second-web-framework">the infrastructure required to finish it</a>.</em></p>
+
+              <p>I already know what this will be called, but I'm keeping the name under wraps until a first release.</p>
 
             </div>
 

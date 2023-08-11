@@ -12,10 +12,6 @@ main {
     margin-bottom: 0;
 }
 
-.tabs.here h1 a {
-    text-decoration: underline;
-}
-
 .tabs.other-page {
     opacity: 0.6;
 }
