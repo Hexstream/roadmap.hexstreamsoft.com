@@ -12,29 +12,6 @@ main {
     margin-bottom: 0;
 }
 
-.tabs.other-page {
-    opacity: 0.6;
-}
-
-.tabs.other-page h1 {
-    position: relative;
-}
-
-.tabs.other-page h1 #preview-option {
-    position: absolute;
-    right: 100%;
-    height: 100%;
-}
-
-html.preview\.visibility\=hide .tabs.other-page ul
-{
-    display: none;
-}
-
-#preview-option.labelled-control input.replaced + label {
-    padding-right: 0.1em;
-}
-
 
 #legend {
     display: flex;
