@@ -77,6 +77,11 @@ section .subsections section {
     border: thin solid rgba(0, 0, 0, 0.3);
     padding: 0.5em;
     margin: 0.5em 1em 0.5em 0;
+    scroll-margin-top: 0.8em;
+}
+
+section .subsections section:target {
+    border-color: green;
 }
 
 section .subsections section .body p:first-child {
@@ -90,6 +95,8 @@ section .subsections section .body p:last-child {
 section .subsections section .icon {
     font-size: 2em;
     margin-right: 0.5rem;
+    text-decoration: none;
+    color: black;
 }
 
 section .subsections section.background .icon {
