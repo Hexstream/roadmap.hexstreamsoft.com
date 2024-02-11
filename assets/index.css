@@ -5,7 +5,7 @@
 
 main {
     margin-bottom: 0;
-    position: initial;
+    position: revert;
 }
 
 #page-header {
@@ -48,12 +48,8 @@ section .subsections section.why-im-excited .icon {
     margin-top: 0.6em;
 }
 
-#learn-more a {
+#learn-more a:where(:not(:hover)) {
     opacity: 0.7;
-}
-
-#learn-more a:hover {
-    opacity: initial;
 }
 
 
@@ -129,5 +125,5 @@ a.highlight {
 }
 
 #footer p a {
-    text-decoration: underline;
+    text-decoration: revert;
 }
