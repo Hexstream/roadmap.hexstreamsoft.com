@@ -103,6 +103,13 @@ a.highlight {
 }
 
 
+@media (width < 34em) {
+    .nowrap {
+        white-space: revert;
+    }
+}
+
+
 #footer p {
     display: table;
     margin: 1rem auto;
