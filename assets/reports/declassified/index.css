@@ -9,3 +9,12 @@
         display: none;
     }
 }
+
+
+#a-word-of-thanks_3 > .tabs {
+    align-items: center;
+}
+
+#a-word-of-thanks_3 > .tabs > :nth-child(2) {
+    max-width: 50em;
+}
