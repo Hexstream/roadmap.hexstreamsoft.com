@@ -1,0 +1,11 @@
+@media (max-width: 60em) {
+    br.if-wide {
+        display: none;
+    }
+}
+
+@media (min-width: 79em) {
+    br.unless-very-wide {
+        display: none;
+    }
+}
